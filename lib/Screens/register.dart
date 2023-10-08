@@ -1,21 +1,21 @@
-import 'package:assignment_2_b/Screens/register.dart';
+import 'package:assignment_2_b/Screens/login.dart';
 import 'package:flutter/material.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class RegisterScreen extends StatefulWidget {
+  const RegisterScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<RegisterScreen> createState() => _RegisterScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _RegisterScreenState extends State<RegisterScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
         title: const Text(
-          'Assignment 2b Login',
+          'Assignment 2b Register',
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
         backgroundColor: Colors.amberAccent,
@@ -26,6 +26,46 @@ class _LoginScreenState extends State<LoginScreen> {
           padding: const EdgeInsets.all(16.0),
           child: Column(
             children: [
+              // First Name
+              TextFormField(
+                decoration: const InputDecoration(
+                  labelText: 'First Name',
+                  hintText: 'Enter your first name',
+                  labelStyle: TextStyle(color: Colors.black),
+                  hintStyle: TextStyle(color: Colors.black),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(100)),
+                    borderSide: BorderSide(color: Colors.black, width: 2.0),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(100)),
+                    borderSide: BorderSide(color: Colors.black, width: 2.0),
+                  ),
+                  prefixIcon: Icon(Icons.text_fields),
+                ),
+              ),
+              // --First Name
+              const SizedBox(height: 16.0),
+              // Last Name
+              TextFormField(
+                decoration: const InputDecoration(
+                  labelText: 'Last Name',
+                  hintText: 'Enter your last name',
+                  labelStyle: TextStyle(color: Colors.black),
+                  hintStyle: TextStyle(color: Colors.black),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(100)),
+                    borderSide: BorderSide(color: Colors.black, width: 2.0),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(100)),
+                    borderSide: BorderSide(color: Colors.black, width: 2.0),
+                  ),
+                  prefixIcon: Icon(Icons.text_fields),
+                ),
+              ),
+              // --Last Name
+              const SizedBox(height: 16.0),
               // Email
               TextFormField(
                 decoration: const InputDecoration(
@@ -68,7 +108,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               // --Password
               const SizedBox(height: 16.0),
-              // Login Button
+              // Register Button
               ElevatedButton(
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
@@ -83,25 +123,25 @@ class _LoginScreenState extends State<LoginScreen> {
                       side: const BorderSide(width: 2, color: Colors.black),
                     ),
                     minimumSize: const Size(double.infinity, 60)),
-                child: const Text('Login'),
+                child: const Text('Register'),
               ),
-              // --Login Button
+              // --Register Button
               const SizedBox(height: 16.0),
               // Don't have an account
               Row(
                 children: [
-                  const Text('Don\'t have an account?'),
+                  const Text('Already have an account?'),
                   TextButton(
                     onPressed: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const RegisterScreen(),
+                          builder: (context) => const LoginScreen(),
                         ),
                       );
                     },
                     child: const Text(
-                      'Register',
+                      'Login',
                       style: TextStyle(
                         color: Colors.black,
                         fontWeight: FontWeight.bold,
