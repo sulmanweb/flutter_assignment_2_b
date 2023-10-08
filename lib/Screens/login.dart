@@ -22,7 +22,7 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(16.0),
           child: Column(
             children: [
               // Email
@@ -81,9 +81,28 @@ class _LoginScreenState extends State<LoginScreen> {
                       borderRadius: BorderRadius.circular(100),
                       side: const BorderSide(width: 2, color: Colors.black),
                     ),
-                    minimumSize: Size(double.infinity, 60)),
+                    minimumSize: const Size(double.infinity, 60)),
                 child: const Text('Login'),
               ),
+              // --Login Button
+              const SizedBox(height: 16.0),
+              // Don't have an account
+              Row(
+                children: [
+                  const Text('Don\'t have an account?'),
+                  TextButton(
+                    onPressed: () {},
+                    child: const Text(
+                      'Register',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              // --Don't have an account
             ],
           ),
         ),
